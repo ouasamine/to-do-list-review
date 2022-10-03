@@ -1,28 +1,45 @@
-export function addToList(tasksArray, newTaskDesc) {
-  const newIndex = tasksArray.length ? tasksArray.length : 0;
-  tasksArray.push({
-    index: newIndex,
-    desc: newTaskDesc,
-    completed: false,
-  });
-}
+export default class Tasks{
+  constructor() {
+    this.tasksArray = [];
+  }
+  getList() {
+    const fetchedTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (fetchedTasks) {
+      this.tasksArray = fetchedTasks;
+    }
+    return this.tasksArray;
+  }
 
-export function removeFromList(tasksArray, taskInedx) {
-  tasksArray.splice(taskInedx, 1);
-}
+  setList(newTasksArray) {
+    this.tasksArray = newTasksArray;
+  }
 
-function updateIndexes(tasksArray) {
-  let cn = 0;
-  tasksArray.forEach((task) => {
-    task.index = cn;
-    cn += 1;
-  });
-}
-
-export function updateStorage(tasksArray) {
-  if (tasksArray) {
-    updateIndexes(tasksArray);
-    const storeTasksArray = JSON.stringify(tasksArray);
-    localStorage.setItem('tasks', storeTasksArray);
+  addToList(newTaskDesc) {
+    const newIndex = this.tasksArray.length ? this.tasksArray.length : 0;
+    this.tasksArray.push({
+      index: newIndex,
+      desc: newTaskDesc,
+      completed: false,
+    });
+  }
+  
+  removeFromList(taskInedx) {
+    this.tasksArray.splice(taskInedx, 1);
+  }
+  
+  updateIndexes() {
+    let cn = 0;
+    this.tasksArray.forEach((task) => {
+      task.index = cn;
+      cn += 1;
+    });
+  }
+  
+  updateStorage() {
+    if (this.tasksArray) {
+      this.updateIndexes();
+      const storeTasksArray = JSON.stringify(this.tasksArray);
+      localStorage.setItem('tasks', storeTasksArray);
+    }
   }
 }
