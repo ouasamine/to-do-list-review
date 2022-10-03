@@ -13,7 +13,7 @@ let tasks = tasksList.getList();
 
 function displayTasks(container) {
   container.innerHTML = '';
-  
+
   tasks.forEach((task) => {
     const listitem = document.createElement('li');
     const checkbox = document.createElement('input');

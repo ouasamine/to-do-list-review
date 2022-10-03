@@ -1,7 +1,8 @@
-export default class Tasks{
+export default class Tasks {
   constructor() {
     this.tasksArray = [];
   }
+
   getList() {
     const fetchedTasks = JSON.parse(localStorage.getItem('tasks'));
     if (fetchedTasks) {
@@ -22,11 +23,11 @@ export default class Tasks{
       completed: false,
     });
   }
-  
+
   removeFromList(taskInedx) {
     this.tasksArray.splice(taskInedx, 1);
   }
-  
+
   updateIndexes() {
     let cn = 0;
     this.tasksArray.forEach((task) => {
@@ -34,7 +35,7 @@ export default class Tasks{
       cn += 1;
     });
   }
-  
+
   updateStorage() {
     if (this.tasksArray) {
       this.updateIndexes();
