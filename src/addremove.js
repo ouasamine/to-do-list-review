@@ -1,4 +1,4 @@
-export default class Tasks {
+ class Tasks {
   constructor() {
     this.tasksArray = [];
   }
@@ -17,11 +17,17 @@ export default class Tasks {
 
   addToList(newTaskDesc) {
     const newIndex = this.tasksArray.length ? this.tasksArray.length : 0;
-    this.tasksArray.push({
+    const newTask ={
       index: newIndex,
       desc: newTaskDesc,
       completed: false,
-    });
+    }
+    if(this.tasksArray.push(newTask)) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
   removeFromList(taskInedx) {
@@ -45,4 +51,6 @@ export default class Tasks {
   }
 }
 
-module.exports = Tasks;
+export default Tasks.addToList
+// module.exports = Tasks;
+
