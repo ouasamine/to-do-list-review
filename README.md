@@ -43,7 +43,12 @@ Check [this live version](https://ouasamine.github.io/to-do-list/) of the projec
 
 - GitHub: [@ouasamine](https://github.com/ouasamine)
 - Twitter: [@ouass_amine](https://twitter.com/ouass_amine)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/amine-ouassef-314686214/)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/amine-ouassef/)
+
+👤 **Nahnah**
+
+- GitHub: [@ouasamine](https://github.com/NahnahAJ)
+
 
 ## 🤝 Contributing
 
