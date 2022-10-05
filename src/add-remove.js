@@ -30,7 +30,10 @@ export default class Tasks {
   }
 
   removeFromList(taskInedx) {
-    this.tasksArray.splice(taskInedx, 1);
+    if(this.tasksArray.splice(taskInedx, 1)) {
+      return true;
+    }
+      return false; 
   }
 
   updateIndexes() {

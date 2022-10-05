@@ -5,4 +5,7 @@ describe('addFunction', () => {
   test('testAddFunction', () => {
     expect(tasks.addToList('Tasks 1')).toBeTruthy();
   });
+  test('removeFromList', () => {
+    expect(tasks.removeFromList(3)).toBeTruthy();
+  })
 });
