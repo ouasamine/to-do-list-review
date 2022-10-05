@@ -7,5 +7,5 @@ describe('addFunction', () => {
   });
   test('removeFromList', () => {
     expect(tasks.removeFromList(3)).toBeTruthy();
-  })
+  });
 });
