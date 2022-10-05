@@ -44,3 +44,5 @@ export default class Tasks {
     }
   }
 }
+
+module.exports = Tasks;
