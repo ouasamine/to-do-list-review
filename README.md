@@ -47,7 +47,7 @@ Check [this live version](https://ouasamine.github.io/to-do-list/) of the projec
 
 👤 **Nahnah**
 
-- GitHub: [@ouasamine](https://github.com/NahnahAJ)
+- GitHub: [@NahnahAJ](https://github.com/NahnahAJ)
 
 
 ## 🤝 Contributing

@@ -2,14 +2,14 @@ import './style.css';
 import '@fortawesome/fontawesome-free/js/fontawesome.js';
 import '@fortawesome/fontawesome-free/js/solid.js';
 import Tasks from './add-remove.js';
-import { toggleStatus } from './task-status.js';
+import toggleStatus from './task-status.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
 const inputIcon = document.querySelector('.input-icon');
 const clearCompleted = document.querySelector('#clear-complete');
 const tasksList = new Tasks();
-let tasks = tasksList.getList();
+const tasks = tasksList.getList();
 
 function displayTasks(container) {
   container.innerHTML = '';
@@ -37,7 +37,7 @@ function displayTasks(container) {
     listitem.appendChild(document.createTextNode(task.desc));
     listitem.appendChild(moveButt);
     listitem.addEventListener('input', () => {
-      task.desc = listitem.innerText;
+      tasks.editList(listitem.innerText, task.index);
       tasksList.updateStorage();
     });
     container.appendChild(listitem);
@@ -79,8 +79,7 @@ inputIcon.addEventListener('click', () => {
   displayTasks(htmlTasksContainer);
 });
 clearCompleted.addEventListener('click', () => {
-  tasks = tasks.filter((task) => !task.completed);
-  tasksList.setList(tasks);
+  tasksList.clearAllCompleted();
   tasksList.updateStorage();
   displayTasks(htmlTasksContainer);
 });

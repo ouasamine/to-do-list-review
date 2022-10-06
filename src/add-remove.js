@@ -1,3 +1,4 @@
+/* eslint-disable no-cond-assign */
 export default class Tasks {
   constructor() {
     this.tasksArray = [];
@@ -29,8 +30,24 @@ export default class Tasks {
     return false;
   }
 
+  editList(newDesc, taskIndex) {
+    if (this.tasksArray[taskIndex].desc = newDesc) { return true; }
+
+    return false;
+  }
+
   removeFromList(taskInedx) {
     if (this.tasksArray.splice(taskInedx, 1)) {
+      return true;
+    }
+
+    return false;
+  }
+
+  clearAllCompleted() {
+    if (this.tasksArray.length) {
+      this.tasksArray = this.tasksArray.filter((task) => !task.completed);
+      this.setList(this.tasksArray);
       return true;
     }
 
