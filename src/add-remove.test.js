@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import Tasks from './add-remove.js';
 import toggleStatus from './task-status.js';
 
