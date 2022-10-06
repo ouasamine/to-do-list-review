@@ -79,7 +79,7 @@ inputIcon.addEventListener('click', () => {
   displayTasks(htmlTasksContainer);
 });
 clearCompleted.addEventListener('click', () => {
-  tasksList.clearCompleted();
+  tasksList.clearAllCompleted();
   tasksList.updateStorage();
   displayTasks(htmlTasksContainer);
 });
