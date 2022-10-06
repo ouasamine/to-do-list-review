@@ -9,7 +9,7 @@ const newTaskInput = document.querySelector('input');
 const inputIcon = document.querySelector('.input-icon');
 const clearCompleted = document.querySelector('#clear-complete');
 const tasksList = new Tasks();
-let tasks = tasksList.getList();
+const tasks = tasksList.getList();
 
 function displayTasks(container) {
   container.innerHTML = '';
@@ -79,8 +79,7 @@ inputIcon.addEventListener('click', () => {
   displayTasks(htmlTasksContainer);
 });
 clearCompleted.addEventListener('click', () => {
-  tasks = tasks.filter((task) => !task.completed);
-  tasksList.setList(tasks);
+  tasksList.clearCompleted();
   tasksList.updateStorage();
   displayTasks(htmlTasksContainer);
 });
