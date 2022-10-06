@@ -37,7 +37,7 @@ function displayTasks(container) {
     listitem.appendChild(document.createTextNode(task.desc));
     listitem.appendChild(moveButt);
     listitem.addEventListener('input', () => {
-      task.desc = listitem.innerText;
+      tasks.editList(listitem.innerText, task.index);
       tasksList.updateStorage();
     });
     container.appendChild(listitem);
