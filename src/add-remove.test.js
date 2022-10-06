@@ -4,6 +4,7 @@
 
 import Tasks from './add-remove.js';
 import toggleStatus from './task-status.js';
+import displayTasks from './index.js';
 
 const tasks = new Tasks();
 
@@ -31,4 +32,16 @@ describe('Testing List Interactions Methods', () => {
   test('Test clearAllCompleted Method', () => {
     expect(tasks.clearAllCompleted()).toBeTruthy();
   });
+});
+
+
+test('Function to add a new task', () => {
+    document.body.innerHTML =
+    '<div>' +
+    '  <ul><li></li></ul>' +
+    '</div>';
+    const list = document.querySelectorAll('ul li');
+    const htmlTasksContainer = document.querySelector('ul');
+    displayTasks(htmlTasksContainer);
+    expect(list).toHaveLength(1);
 });

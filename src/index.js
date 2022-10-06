@@ -11,7 +11,7 @@ const clearCompleted = document.querySelector('#clear-complete');
 const tasksList = new Tasks();
 const tasks = tasksList.getList();
 
-function displayTasks(container) {
+export default function displayTasks(container) {
   container.innerHTML = '';
 
   tasks.forEach((task) => {
