@@ -1,4 +1,5 @@
 import Tasks from './add-remove.js';
+import toggleStatus from './task-status.js';
 
 const tasks = new Tasks();
 
@@ -16,5 +17,10 @@ describe('Testing List Interactions Methods', () => {
 
   test('Edit List Item Description', () => {
     expect(tasks.editList('this is new desc', 1)).toBeTruthy();
+  })
+
+  test('Check status of task', () => {
+    const newTask = tasks.getList()[0];
+    expect(toggleStatus(newTask)).toBeTruthy();
   })
 });

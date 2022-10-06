@@ -2,7 +2,7 @@ import './style.css';
 import '@fortawesome/fontawesome-free/js/fontawesome.js';
 import '@fortawesome/fontawesome-free/js/solid.js';
 import Tasks from './add-remove.js';
-import { toggleStatus } from './task-status.js';
+import toggleStatus from './task-status.js';
 
 const htmlTasksContainer = document.querySelector('ul');
 const newTaskInput = document.querySelector('input');
